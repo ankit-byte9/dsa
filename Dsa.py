@@ -151,7 +151,7 @@ def max_min_array(a):
     for i in a:
         if i > b:
             b=i
-        elif i < c:
+        if i < c:
             c=i
     print(f"Maximum element: {b} \n Minimum element: {c}")
 def sum_array(a):
