@@ -101,4 +101,122 @@ def count_vow_cons(a):
     c=len(a)-b
     print(f"Number of vowels = {b}")
     print(f"Number of consonents = {c}")
+def string_len(a):
+    b=0
+    for i in a:
+        b+=1
+    return b
+def non_repeat_char(a):
+    for i in range(len(a)):
+        is_repeated = False
+        for j in range(len(a)):
+            if i != j and a[i] == a[j]:
+                is_repeated = True
+                break
+        
+        if not is_repeated:
+            print(f"First non-repeating character is: {a[i]}")
+            return a[i]
+            
+    print("None found")
+def freq_count(a):
+    b={}
+    for i in a:
+        if i not in b:
+            b[i]=1
+        else:
+            b[i]+=1
+    return b
+def rem_dupli_char(a):
+    b=set()
+    result=""
+    for char in a:
+        if char not in b:
+            result+=char
+            b.add(char)
+    return result
+def longest_word(a):
+    b=0
+    c=""
+    for i in a.split():
+        if len(i)>b:
+            b=len(i)
+            c=i
+        elif len(i)==b:
+            print(f"Longest words are: {c} and {i}")
+    return c
+def max_min_array(a):
+    b=a[0]
+    c=a[0]
+    for i in a:
+        if i > b:
+            b=i
+        elif i < c:
+            c=i
+    print(f"Maximum element: {b} \n Minimum element: {c}")
+def sum_array(a):
+    sum=0
+    for i in a:
+        sum+=i
+    print(f"Sum of elements= {sum}")
+def rev_array(a):
+    b = []
+    for i in range(len(a) - 1, -1, -1):
+        b.append(a[i])
+    return b
 
+def second_largest(a):
+    for i in range(len(a)-1):
+        for j in range(i+1,len(a)):
+            if a[i] > a[j]:
+                temp=a[i]
+                a[i]=a[j]
+                a[j]=temp
+    return a[len(a)-2]
+def odd_even(a):
+    odd,even=0,0
+    for num in a:
+        if num %2==0:
+            even+=1
+        else:
+            odd+=1
+    print(f"odd number count={odd} and even number count = {even}")
+def two_sum_values(a, target):
+    seen = set()
+    
+    for num in a:
+        b = target - num
+        if b in seen:
+            return [b, num]
+        seen.add(num)
+    return None
+def freq_count(a):
+    b={}
+    for i in a:
+        if i not in b:
+            b[i]=1
+        else:
+            b[i]+=1
+    return b
+def missing_num(a):
+    b=[]
+    for i in range(a[0],a[-1]+1):
+        if i not in a:
+            b.append(i)
+    print(b)
+missing_num([1,2,4,5,6,8,9])
+def merge_sort(a,b):
+    result=[]
+    c=0
+    d=0
+    while c<len(a) and d<len(b):
+        if a[c]<b[d]:
+            result.append(a[c])
+            c+=1
+        else:
+            result.append(b[d])
+            d+=1
+    result.extend(a[c:])
+    result.extend(b[d:])
+
+    return result
